@@ -159,6 +159,7 @@ st.download_button('Download CSV Dataset', data = csv, file_name = "FunOlympicSh
 while True:
 
     df = pd.read_csv("FunOlympicSheet.csv")
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
     df = filter_data(df, Country=None, Sport=None, Device=None)
     # Filter data based on date range
     filtered_df = df.copy()
