@@ -53,7 +53,7 @@ def get_data(API_KEY=None, API_ENDPOINT=None, num_rows=3500, num_days=4):
         # Fetch data from the API using provided credentials
         return fetch_data_from_api(API_KEY, API_ENDPOINT)
 
-df = get_data()
+df = pd.read_csv("FunOlympicSheet.csv")
 
 # Initialize the Streamlit app
 st.set_page_config(page_title="FunOlympics_Dashboard", page_icon=":bar_chart:", layout="wide")
@@ -157,7 +157,7 @@ st.download_button('Download CSV Dataset', data = csv, file_name = "FunOlympicSh
 # Main loop
 while True:
 
-    df = get_data()
+    df = pd.read_csv("FunOlympicSheet.csv")
     df = filter_data(df, Country=None, Sport=None, Device=None)
     # Filter data based on date range
     filtered_df = df.copy()
