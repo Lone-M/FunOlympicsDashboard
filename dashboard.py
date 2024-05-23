@@ -54,7 +54,7 @@ def get_data(API_KEY=None, API_ENDPOINT=None, num_rows=3500, num_days=4):
         return fetch_data_from_api(API_KEY, API_ENDPOINT)
 
 df = pd.read_csv("FunOlympicSheet.csv")
-df["timestamp"]= pd.todatetime(df["timestamp"])
+df["timestamp"] = pd.to_datetime(df["timestamp"])
 
 # Initialize the Streamlit app
 st.set_page_config(page_title="FunOlympics_Dashboard", page_icon=":bar_chart:", layout="wide")
